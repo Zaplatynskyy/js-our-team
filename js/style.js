@@ -45,21 +45,42 @@ const team = [
 //     }
 // }
 
-const teamContainer = document.querySelector('.team-container');
-const teamCard = document.createElement('div');
-teamCard.className = 'team-card';
-// console.log(teamCard); 
-teamCard.innerHTML = `
-    <div class="card-image">
-        <img
-        src="${team[0].imgSrc}"
-        alt="${team[0].nome}"
-        />
-        </div>
-    <div class="card-text">
-    <h3>${team[0].nome}</h3>
-    <p>${team[0].ruolo}</p>
-    </div>
-`;
+// const teamContainer = document.querySelector('.team-container');
+// const teamCard = document.createElement('div');
+// teamCard.className = 'team-card';
+// // console.log(teamCard); 
+// teamCard.innerHTML = `
+//     <div class="card-image">
+//         <img
+//         src="${team[0].imgSrc}"
+//         alt="${team[0].nome}"
+//         />
+//         </div>
+//     <div class="card-text">
+//     <h3>${team[0].nome}</h3>
+//     <p>${team[0].ruolo}</p>
+//     </div>
+// `;
 // console.log(teamCard.innerHTML);
-teamContainer.appendChild(teamCard);
+// teamContainer.appendChild(teamCard);
+
+for(let i = 0; i < team.length; i++) {
+    const teamContainer = document.querySelector('.team-container');
+    const teamCard = document.createElement('div');
+    teamCard.className = 'team-card';
+    // console.log(teamCard); 
+    teamCard.innerHTML = `
+        <div class="card-image">
+            <img
+            src="${team[i].imgSrc}"
+            alt="${team[i].nome}"
+            />
+            </div>
+        <div class="card-text">
+        <h3>${team[i].nome}</h3>
+        <p>${team[i].ruolo}</p>
+        </div>
+    `;
+    teamContainer.appendChild(teamCard);
+
+}
