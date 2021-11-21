@@ -54,6 +54,11 @@ addMemberButton.addEventListener("click",
 
         // richiamo la funzione insTeamCard per inserire gli elementi (dati in input) nel document 
         insTeamCard(nome, ruolo, img);
+
+        //svuoto il contenuto  dei valori in input
+        document.getElementById('name').value = '';
+        document.getElementById('role').value = '';
+        document.getElementById('image').value = '';
     }
 );
 
