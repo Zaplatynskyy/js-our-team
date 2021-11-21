@@ -44,3 +44,22 @@ const team = [
 //         console.log(key, team[i][key]);
 //     }
 // }
+
+const teamContainer = document.querySelector('.team-container');
+const teamCard = document.createElement('div');
+teamCard.className = 'team-card';
+// console.log(teamCard); 
+teamCard.innerHTML = `
+    <div class="card-image">
+        <img
+        src="${team[0].imgSrc}"
+        alt="${team[0].nome}"
+        />
+        </div>
+    <div class="card-text">
+    <h3>${team[0].nome}</h3>
+    <p>${team[0].ruolo}</p>
+    </div>
+`;
+// console.log(teamCard.innerHTML);
+teamContainer.appendChild(teamCard);
