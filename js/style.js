@@ -65,23 +65,24 @@ const team = [
 // teamContainer.appendChild(teamCard);
 
 for(let i = 0; i < team.length; i++) {
-    const teamContainer = document.querySelector('.team-container');
-    const teamCard = document.createElement('div');
-    teamCard.className = 'team-card';
-    // console.log(teamCard); 
-    teamCard.innerHTML = `
-        <div class="card-image">
-            <img
-            src="img/${team[i].imgSrc}"
-            alt="${team[i].nome}"
-            />
-            </div>
-        <div class="card-text">
-        <h3>${team[i].nome}</h3>
-        <p>${team[i].ruolo}</p>
-        </div>
-    `;
-    teamContainer.appendChild(teamCard);
+    insTeamCard(team[i].nome, team[i].ruolo, team[i].imgSrc);
+    // const teamContainer = document.querySelector('.team-container');
+    // const teamCard = document.createElement('div');
+    // teamCard.className = 'team-card';
+    // // console.log(teamCard); 
+    // teamCard.innerHTML = `
+    //     <div class="card-image">
+    //         <img
+    //         src="img/${team[i].imgSrc}"
+    //         alt="${team[i].nome}"
+    //         />
+    //         </div>
+    //     <div class="card-text">
+    //     <h3>${team[i].nome}</h3>
+    //     <p>${team[i].ruolo}</p>
+    //     </div>
+    // `;
+    // teamContainer.appendChild(teamCard);
 }
 
 const addMemberButton = document.getElementById('addMemberButton');
@@ -94,24 +95,27 @@ addMemberButton.addEventListener("click",
         const ruolo = document.getElementById('role').value;
         const img = document.getElementById('image').value;
 
-        const teamContainer = document.querySelector('.team-container');
-        const teamCard = document.createElement('div');
-        teamCard.className = 'team-card';
-        // console.log(teamCard); 
-        teamCard.innerHTML = `
-            <div class="card-image">
-                <img
-                src="img/${img}"
-                alt="${nome}"
-                />
-                </div>
-            <div class="card-text">
-            <h3>${nome}</h3>
-            <p>${ruolo}</p>
-            </div>
-        `;
-        teamContainer.appendChild(teamCard);
-
+        insTeamCard(nome, ruolo, img);
     }
 );
+
+function insTeamCard(name, role, image) {
+    const teamContainer = document.querySelector('.team-container');
+    const teamCard = document.createElement('div');
+    teamCard.className = 'team-card';
+    // console.log(teamCard); 
+    teamCard.innerHTML = `
+        <div class="card-image">
+            <img
+            src="img/${image}"
+            alt="${name}"
+            />
+            </div>
+        <div class="card-text">
+        <h3>${name}</h3>
+        <p>${role}</p>
+        </div>
+    `;
+    teamContainer.appendChild(teamCard);
+}
 
